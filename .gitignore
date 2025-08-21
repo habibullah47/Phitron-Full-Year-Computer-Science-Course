@@ -1,0 +1,17 @@
+# macOS junk files
+.DS_Store
+
+# VS Code settings
+.vscode/
+
+# Compiled C/C++ files
+*.o
+*.out
+a.out
+*.obj
+*.exe
+*.log
+
+# Build folders
+build/
+dist/

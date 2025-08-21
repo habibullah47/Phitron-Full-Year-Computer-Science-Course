@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../../C++ for DSA"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"iostream": "cpp",
+			"istream": "cpp"
+		}
+	}
+}
