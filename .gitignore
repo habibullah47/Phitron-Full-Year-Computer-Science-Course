@@ -12,6 +12,54 @@ a.out
 *.exe
 *.log
 
+# Ignore build outputs
+*.bin
+
+# Ignore Competitive Programming Helper files
+.cph/
+
+# Ignore macOS system junk
+.DS_Store
+
+# === Build Artifacts ===
+*.obj
+*.exe
+*.out
+*.bin
+*.dll
+*.so
+*.dylib
+
+# === C++ Specific ===
+*.a
+*.lib
+*.lo
+*.la
+
+# === IDE / Editor Specific ===
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# === Competitive Programming Helper ===
+.cph/
+
+# === macOS Junk ===
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+
+# === Logs / Misc ===
+*.log
+*.tmp
+
+# === Custom ===
+# Ignore test binaries in your learning repo
+*.run
+
 # Build folders
 build/
 dist/
