@@ -12,6 +12,6 @@ int main() {
     // 5 'A' characters
     string charac(5, 'A');
 
-    cout << charac;
+    cout << three;
     return 0;
 }
