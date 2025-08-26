@@ -5,6 +5,7 @@ using namespace std;
 int main() {
   string s;
   cin >> s;
+  // is it executable?
   //   int n = s.size();
   //   bool isPlanindrome = true;
   //   for (int i = 0; i < n / 2; i++) {
