@@ -22,6 +22,7 @@ int main() {
   int index = 0;
 
   // Identifing minimum mark and name
+  //Logic From my intelligent
   for (int i = 0; i < n; i++) {
     mn = min(talib[i].marks, mn);
     if (mn == talib[i].marks) {
@@ -33,6 +34,7 @@ int main() {
        << "Minimum mark: " << mn << endl;
 
   // Identifying maximum object
+  //From lecture
   TalibulIlm mx;
   mx.marks = INT_MIN;
 
