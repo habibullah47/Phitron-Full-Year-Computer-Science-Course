@@ -35,3 +35,14 @@ int main() {
   }
   return 0;
 }
+
+/*
+Input:
+3
+Arman Uddin
+1 95
+Shihab
+2 79
+Habib
+3 75
+*/
