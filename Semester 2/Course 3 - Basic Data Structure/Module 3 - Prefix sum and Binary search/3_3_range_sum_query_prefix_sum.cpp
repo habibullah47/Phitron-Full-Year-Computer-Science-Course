@@ -2,19 +2,17 @@
 #include <vector>
 using namespace std;
 
-// Solve in brute force way
 int main() {
-  // Input n, q
-  int n, q;
+  long long int n, q;
   cin >> n >> q;
 
-  // Input: a[n]
-  long long int a[n];
+  vector<long long int> a(n + 1);
+
   for (int i = 1; i <= n; i++) {
     cin >> a[i];
   }
 
-  vector<long long int> pre(n);
+  vector<long long int> pre(n + 1);
   pre[1] = a[1];
 
   for (int i = 1; i <= n; i++) {
@@ -22,10 +20,9 @@ int main() {
   }
 
   while (q--) {
-    // Input l, r
     int l, r;
     cin >> l >> r;
-    long long int sum;
+    int sum = 0;
     if (l == 1) {
       sum = pre[r];
     } else {
@@ -34,6 +31,6 @@ int main() {
 
     cout << sum << endl;
   }
-
   return 0;
 }
+
