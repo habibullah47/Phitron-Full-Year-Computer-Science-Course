@@ -12,16 +12,16 @@ public:
   }
 };
 
+int main() {
+  Node a(10), b(20), c(30);
 
-int main() { 
-    Node a(10), b(20), c(30);
+  a.next = &b;
+  b.next = &c;
+  // The c is remain null as we declare in construction.
 
-    a.next = &b;
-    b.next = &c;
-    //The c is remain null as we declare in construction.
+  cout << a.val << endl;
+  cout << a.next->val << endl;
+  cout << a.next->next->val << endl;
 
-    cout << a.val << endl;
-    cout << a.next->val << endl;
-    cout << a.next->next->val << endl;
-
-    return 0; }
+  return 0;
+}
