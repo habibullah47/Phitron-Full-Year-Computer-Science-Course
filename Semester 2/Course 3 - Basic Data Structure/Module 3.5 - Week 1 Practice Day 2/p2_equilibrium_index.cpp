@@ -17,9 +17,8 @@ int main() {
     pre[i] = pre[i - 1] + a[i];
   }
 
-  int total = pre[n-1];
-  int equilibIndex = -1; //Why equilibIndex value is -1?
-
+  int total = pre[n - 1];
+  int equilibIndex = -1; // Why equilibIndex value is -1?
 
   // MVP binary search style
   int l = 0;
@@ -27,8 +26,8 @@ int main() {
   while (l <= r) {
     int mid = (l + r) / 2;
 
-    int sumP = (mid > 0 ? pre[mid - 1] : 0);   // left sum
-    int sumQ = total - pre[mid];              // right sum 
+    int sumP = (mid > 0 ? pre[mid - 1] : 0); // left sum
+    int sumQ = total - pre[mid];             // right sum
 
     if (sumP == sumQ) {
       equilibIndex = mid;
