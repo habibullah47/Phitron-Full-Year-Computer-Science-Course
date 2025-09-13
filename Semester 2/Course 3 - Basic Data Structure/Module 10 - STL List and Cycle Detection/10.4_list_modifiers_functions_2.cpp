@@ -2,7 +2,6 @@
 
 #include <algorithm>
 #include <iostream>
-#include <iterator>
 #include <list>
 using namespace std;
 
