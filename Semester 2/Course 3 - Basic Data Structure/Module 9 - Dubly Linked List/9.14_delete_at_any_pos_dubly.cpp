@@ -34,19 +34,17 @@ void print_backward(Node *tail) {
   cout << endl;
 }
 
-void delete_at_head(Node *&head, Node *&tail) {
-  Node *deleteNode = head;
-  head = head->next;
-  delete deleteNode;
-
-  // corner case
-  if (head == NULL) {
-    tail = NULL;
-    return;
+void delete_at_any_pos(Node *&head, Node *&tail, int idx) {
+  Node *tmp = head;
+  for (int i = 1; i < idx; i++) {
+    tmp = tmp->next;
   }
-  head->prev = NULL;
-}
 
+  Node *deleteNode = tmp->next;
+  tmp->next = deleteNode->next;
+  tmp->next->prev = tmp;
+  delete deleteNode;
+}
 int main() {
   Node *head = new Node(10);
   Node *a = new Node(20);
@@ -58,8 +56,7 @@ int main() {
   a->next = tail;
   tail->prev = a;
 
-  delete_at_head(head, tail);
-
+  delete_at_any_pos(head, tail, 2);
   print_forward(head);
   print_backward(tail);
   return 0;

@@ -1,3 +1,6 @@
+// We are not able to delete tail from tail node in singly linked list
+// But we able to did in dubly linked list.
+
 #include <cstddef>
 #include <iostream>
 using namespace std;
@@ -37,7 +40,6 @@ void print_backward(Node *tail) {
 void delete_at_head(Node *&head, Node *&tail) {
   Node *deleteNode = head;
   head = head->next;
-  delete deleteNode;
 
   // corner case
   if (head == NULL) {
@@ -45,6 +47,18 @@ void delete_at_head(Node *&head, Node *&tail) {
     return;
   }
   head->prev = NULL;
+  delete deleteNode;
+}
+void delete_at_tail(Node *&head, Node *&tail) {
+  Node *deleteNode = tail;
+  tail = tail->prev;
+  delete deleteNode;
+
+  if (tail == NULL) {
+    head = NULL;
+    return;
+  }
+  tail->next = NULL;
 }
 
 int main() {
@@ -58,7 +72,7 @@ int main() {
   a->next = tail;
   tail->prev = a;
 
-  delete_at_head(head, tail);
+  delete_at_tail(head, tail);
 
   print_forward(head);
   print_backward(tail);
