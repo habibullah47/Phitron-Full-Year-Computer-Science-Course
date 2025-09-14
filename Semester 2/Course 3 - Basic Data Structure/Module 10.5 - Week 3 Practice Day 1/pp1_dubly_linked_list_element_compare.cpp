@@ -29,13 +29,6 @@ void insert_at_tail(Node *&head, Node *&tail, int val) {
   tail = tail->next;
 }
 
-void printing_linked_list(Node *head) {
-  Node *tmp = head;
-  while (tmp != NULL) {
-    cout << tmp->val << endl;
-    tmp = tmp->next;
-  }
-}
 int size_of_linked_list(Node *head) {
   int cnt = 0;
   Node *tmp = head;
