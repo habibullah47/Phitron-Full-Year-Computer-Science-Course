@@ -1,5 +1,3 @@
-
-
 #include <cstddef>
 #include <iostream>
 using namespace std;
@@ -28,7 +26,6 @@ void insert_at_tail(Node *&head, Node *&tail, int val) {
   tail->next = newNode;
   tail = tail->next;
 }
-
 void reverse_linked_list(Node *&head, Node *&tail, Node *tmp) {
   // base case
   if (tmp->next == NULL) {
