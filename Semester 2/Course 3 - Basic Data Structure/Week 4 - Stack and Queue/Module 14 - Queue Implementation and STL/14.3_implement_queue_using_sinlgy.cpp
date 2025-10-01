@@ -1,5 +1,6 @@
 #include <iostream>
 using namespace std;
+
 class Node {
 public:
   int val;
@@ -12,38 +13,54 @@ public:
 };
 
 class myQueue {
-public:
   Node *head = NULL;
   Node *tail = NULL;
 
   int sz = 0;
-  void push(int val) { // O(1)
-    sz++;
-    Node *newnode = new Node(val);
 
-    if (head == NULL) {
-      head = newnode;
-      tail = newnode;
-      return;
+public:
+  void push(int val) {
+    Node *newNode = new Node(val);
+    if (empty()) {
+      head = newNode;
+      tail = newNode;
+    } else {
+      tail->next = newNode;
+      tail = newNode;
     }
-
-    tail->next = newnode;
-    tail = newnode;
+    sz++;
   }
-  void pop() { // O(1)
-    sz--;
+
+  void pop() {
+    if (empty())
+      return;
+  
+
     Node *deleteNode = head;
     head = head->next;
     delete deleteNode;
+      sz--;
     if (head == NULL) {
       tail = NULL;
     }
   }
-  int front() { return head->val; } // O(1)
 
-  int back() { return tail->val; }      // O(1)
-  int size() { return sz; }             // O(1)
-  bool empty() { return head == NULL; } // O(1)
+  bool empty() { return sz == 0; }
+
+  int front() {
+    if (head == NULL)
+      return -1;
+
+    return head->val;
+  }
+
+  int back() {
+    if (head == NULL)
+      return -1;
+    return tail->val;
+  }
+
+  int size() { return sz; }
 };
 
 int main() {
@@ -58,11 +75,12 @@ int main() {
     q.push(val);
   }
 
-  // cout << q.front() << " " << q.back() << " " << q.size();
-
   while (!q.empty()) {
-    cout << q.front() << endl;
+    cout << q.front() << " ";
     q.pop();
   }
-  return 0;
+  q.pop();
+  q.pop();
+  q.pop();
+  cout << q.size() << q.front() << q.back();
 }

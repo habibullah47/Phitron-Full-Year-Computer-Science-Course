@@ -2,23 +2,23 @@
 using namespace std;
 
 int main() {
-    int n;
-    cin >> n;
+  int n;
+  cin >> n;
 
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n; j++) {
-            if (i == n / 2 && j == n / 2) {
-                cout << "X";   // Middle element
-            } else if (j == i) {
-                cout << "\\";  // Left diagonal
-            } else if (j == n - i - 1) {
-                cout << "/";   // Right diagonal
-            } else {
-                cout << " ";   // Empty space
-            }
-        }
-        cout << endl;
+  for (int i = 0; i < n; i++) {
+    for (int j = 0; j < n; j++) {
+      if (i == n / 2 && j == n / 2) {
+        cout << "X"; // Middle element
+      } else if (j == i) {
+        cout << "\\"; // Left diagonal
+      } else if (j == n - i - 1) {
+        cout << "/"; // Right diagonal
+      } else {
+        cout << " "; // Empty space
+      }
     }
+    cout << endl;
+  }
 
-    return 0;
+  return 0;
 }
