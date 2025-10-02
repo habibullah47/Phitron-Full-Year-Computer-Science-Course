@@ -60,36 +60,42 @@ public:
 };
 
 class myQueue {
-  myStack s1, s2;
+  Node *head = NULL;
+  Node *tail = NULL;
+  int sz = 0;
 
 public:
-  void push(int val) { s1.push(val); }
+  void push(int val) {
+    Node *newNode = new Node(val);
+    if (isEmpty()) {
+      head = tail = newNode;
+    } else {
+      tail->next = newNode;
+      tail = newNode;
+    }
+    sz++;
+  }
 
   void pop() {
     if (isEmpty())
       return;
-    if (s2.isEmpty()) {
-      while (!s1.isEmpty()) {
-        s2.push(s1.top());
-        s1.pop();
-      }
-    }
-    s2.pop();
+    Node *deleteNode = head;
+    head = head->next;
+    if (!head)
+      tail = NULL;
+    delete deleteNode;
+    sz--;
   }
 
   int front() {
     if (isEmpty())
       return -1;
-
-    if (s2.isEmpty()) {
-      while (!s1.isEmpty()) {
-        s2.push(s1.top());
-        s1.pop();
-      }
-    }
-    return s2.top();
+    return head->val;
   }
-  bool isEmpty() { return s1.isEmpty() && s2.isEmpty(); }
+
+  int size() { return sz; }
+
+  bool isEmpty() { return sz == 0; }
 };
 
 int main() {
