@@ -18,8 +18,8 @@ void postorder(Node *root) {
     return;
   }
   postorder(root->left);
-  cout << root->val << " ";
   postorder(root->right);
+  cout << root->val << " ";
 }
 
 int main() {
