@@ -106,14 +106,17 @@ Node *input_tree() {
   return root;
 }
 
-int count_nodes(Node *root) {
-  if (!root)
+int count_leaf_nodes(Node *root) {
+  if (!root) {
     return 0;
+  }
+  if (!root->left && !root->right)
+    return 1;
 
-  int l = count_nodes(root->left);
-  int r = count_nodes(root->right);
+  int l = count_leaf_nodes(root->left);
+  int r = count_leaf_nodes(root->right);
 
-  return l + r + 1;
+  return l + r;
 }
 
 int main() {
