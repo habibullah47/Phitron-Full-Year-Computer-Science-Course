@@ -1,4 +1,3 @@
-#include <algorithm>
 #include <iostream>
 #include <queue>
 using namespace std;
@@ -19,7 +18,6 @@ public:
 Node *input_tree() {
   int val;
   cin >> val;
-
   Node *root;
   if (val == -1)
     root = NULL;
@@ -56,7 +54,6 @@ Node *input_tree() {
     if (parent->right)
       q.push(parent->right);
   }
-
   return root;
 }
 
@@ -77,30 +74,45 @@ void level_order(Node *root) {
   }
 }
 
-void insert(Node *&root, int val) {
-  if (!root)
-    root = new Node(val);
+//Backdated code
+// void insert(Node *&root, int val) {
+//   if (!root)
+//     root = new Node(val);
 
-  if (root->val > val) {
-    if (!root->left)
-      root->left = new Node(val);
-    else
-      insert(root->left, val);
-  } else {
-    if (!root->right)
-      root->right = new Node(val);
-    else
-      insert(root->right, val);
-  }
+//   if (root->val > val) {
+//     if (!root->left)
+//       root->left = new Node(val);
+//     else
+//       insert(root->left, val);
+//   } else {
+//     if (!root->right)
+//       root->right = new Node(val);
+//     else
+//       insert(root->right, val);
+//   }
+// }
+
+Node* insert(Node* root, int val)
+{
+    if(!root){
+    root = new Node(val);
+    return root;
+    }
+
+    if(root->val > val){
+       root->left = insert(root->left, val);
+    } else{
+        root->right = insert(root->right, val);
+    }
+
+    return root;
 }
 
 int main() {
   Node *root = input_tree();
   int val;
-  cin >> val;
-  insert(root, val);
-  insert(root, 999);
 
+  insert(root, 392);
   level_order(root);
 
   return 0;

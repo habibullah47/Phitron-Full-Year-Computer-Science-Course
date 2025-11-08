@@ -33,7 +33,7 @@ bool cmp(TalibulIlm l, TalibulIlm r) {
   // return l.marks < r.marks;
 
 
-  // 1st way: If there have some marks is same and then we want roll wise ascending order
+  // 1st way: If there have some marks is same and then we want rule wise ascending order
   //   if (l.marks < r.marks) {
   //     return true;
   //   } else if (l.marks > r.marks) {

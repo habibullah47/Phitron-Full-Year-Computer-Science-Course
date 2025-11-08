@@ -20,13 +20,14 @@ Node *convert(int a[], int l, int r) {
     return NULL;
 
   int mid = (l + r) / 2;
+
   Node *root = new Node(a[mid]);
 
-  Node *leftroot = convert(a, l, mid - 1);
-  Node *rightroot = convert(a, mid + 1, r);
+  Node *leftRoot = convert(a, l, mid - 1);
+  Node *rightRoot = convert(a, mid + 1, r);
 
-  root->left = leftroot;
-  root->right = rightroot;
+  root->left = leftRoot;
+  root->right = rightRoot;
 
   return root;
 }

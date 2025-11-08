@@ -66,9 +66,7 @@ int main() {
     insert_heap(v, val);
   }
   print_heap(v);
-
   delete_heap(v);
-
   print_heap(v);
 
   return 0;

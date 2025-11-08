@@ -12,19 +12,44 @@ public:
     this->right = NULL;
   }
 };
+// int main() {
+//   Node *root = new Node(10);
+//   Node *a = new Node(20);
+//   Node *b = new Node(30);
+//   Node *c = new Node(40);
+//   Node *d = new Node(50);
+//   Node *e = new Node(60);
+
+//   root->left = a;
+//   root->right = b;
+//   a->left = c;
+//   b->left = d;
+//   b->right = e;
+
+//   return 0;
+// }
+
+//PRACTICE
 int main() {
   Node *root = new Node(10);
   Node *a = new Node(20);
   Node *b = new Node(30);
-  Node *c = new Node(40);
-  Node *d = new Node(50);
-  Node *e = new Node(60);
+  Node *c = new Node(30);
+  Node *d = new Node(30);
+  Node *e = new Node(30);
 
   root->left = a;
   root->right = b;
-  a->left = c;
-  b->left = d;
+  a->right = c;
+  a->left = d;
   b->right = e;
+  b->left = NULL;
+  c->right = NULL;
+  c->left = NULL;
+  d->right = NULL;
+  d->left = NULL;
+  e->right = NULL;
+  e->left = NULL;
 
   return 0;
 }
