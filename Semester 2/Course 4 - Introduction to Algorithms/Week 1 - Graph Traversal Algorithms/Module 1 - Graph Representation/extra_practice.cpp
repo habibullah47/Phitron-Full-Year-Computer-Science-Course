@@ -1,25 +1,23 @@
-#include <cstring>
+
 #include <iostream>
 using namespace std;
-
+// have bug
 int main() {
   int n, e;
   cin >> n >> e;
 
   int adj_mat[n][n];
-
-  // *1: There are alternative ways for set fix number.
   memset(adj_mat, 0, sizeof(adj_mat));
   for (int i = 0; i < n; i++)
     for (int j = 0; j < n; j++)
       if (i == j)
         adj_mat[i][j] = 1;
 
-  while (e--) { // Main logic
+  while (e--) {
     int a, b;
     cin >> a >> b;
     adj_mat[a][b] = 1;
-    adj_mat[b][a] = 1; // Diff between directed and undirected graph
+    adj_mat[b][a] = 1;
   }
 
   for (int i = 0; i < n; i++) {
@@ -31,10 +29,3 @@ int main() {
 
   return 0;
 }
-
-//*1:
-//   for (int i = 0; i < n; i++) {
-//     for (int j = 0; j < n; j++) {
-//       adj_mat[i][j] = 0;
-//     }
-//   }
