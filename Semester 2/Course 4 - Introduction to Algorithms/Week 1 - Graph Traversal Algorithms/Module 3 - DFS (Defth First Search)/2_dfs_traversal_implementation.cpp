@@ -4,7 +4,7 @@ using namespace std;
 vector<int> adj_list[1004];
 bool visited[1004];
 
-void bfs(int src) {
+void dfs(int src) {
 
   // base case of recursion
   // Doesn't need here, b/ of visited check;
@@ -13,7 +13,7 @@ void bfs(int src) {
 
   for (int child : adj_list[src])
     if (!visited[child])
-      bfs(child);
+      dfs(child);
 }
 
 int main() {
@@ -28,6 +28,6 @@ int main() {
   }
 
   memset(visited, false, sizeof(visited));
-  bfs(0);
+  dfs(0);
   return 0;
 }
